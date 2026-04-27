@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VeriSight AI | Fake News Detection</title>
+    <meta
+      name="description"
+      content="VeriSight AI is a polished fake news detection website with interactive credibility analysis, clear reporting, and smooth animations."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <header class="site-header reveal">
+        <a class="brand" href="#top" aria-label="VeriSight AI home">
+          <span class="brand-mark">V</span>
+          <span class="brand-copy">
+            <strong>VeriSight AI</strong>
+            <small>Signal-led misinformation screening</small>
+          </span>
+        </a>
+        <nav class="site-nav">
+          <a href="#analyzer">Analyzer</a>
+          <a href="#insights">Insights</a>
+          <a href="#workflow">Workflow</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">AI-Assisted Fake News Detection</p>
+            <h1>Spot weak claims fast with a calm, transparent interface.</h1>
+            <p class="hero-text">
+              Paste a headline, source, or full article to receive a credibility
+              snapshot, risk flags, and guidance on what deserves a second look.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#analyzer">Start Analysis</a>
+              <a class="button button-secondary" href="#workflow">See How It Works</a>
+            </div>
+            <div class="hero-metrics">
+              <article class="metric-card">
+                <strong>92%</strong>
+                <span>Demo trust-signal coverage</span>
+              </article>
+              <article class="metric-card">
+                <strong>8s</strong>
+                <span>Average scan experience</span>
+              </article>
+              <article class="metric-card">
+                <strong>24/7</strong>
+                <span>Ready for newsroom triage</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="hero-panel reveal">
+            <div class="radar-card">
+              <div class="radar-header">
+                <span>Live Assessment</span>
+                <span class="status-pill">Balanced</span>
+              </div>
+              <div class="radar-grid">
+                <div>
+                  <small>Source reliability</small>
+                  <strong>78</strong>
+                </div>
+                <div>
+                  <small>Emotion intensity</small>
+                  <strong>41</strong>
+                </div>
+                <div>
+                  <small>Evidence density</small>
+                  <strong>84</strong>
+                </div>
+                <div>
+                  <small>Manipulation risk</small>
+                  <strong>22</strong>
+                </div>
+              </div>
+              <div class="pulse-track">
+                <span></span>
+              </div>
+              <p>
+                Cross-check before sharing. The language is mostly factual, but
+                the source authority should still be confirmed.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="analyzer-section reveal" id="analyzer">
+          <div class="section-heading">
+            <p class="eyebrow">Credibility Analyzer</p>
+            <h2>Inspect an article in one focused workspace.</h2>
+          </div>
+
+          <div class="analyzer-layout">
+            <form class="analyzer-form" id="analyzerForm">
+              <label for="headline">Headline</label>
+              <input
+                id="headline"
+                name="headline"
+                type="text"
+                placeholder="Example: Scientists confirm..."
+                required
+              />
+
+              <label for="source">Source or Publisher</label>
+              <input
+                id="source"
+                name="source"
+                type="text"
+                placeholder="Example: Reuters, WHO, Unknown blog"
+              />
+
+              <label for="content">Article Text</label>
+              <textarea
+                id="content"
+                name="content"
+                rows="7"
+                placeholder="Paste the article content here for analysis..."
+                required
+              ></textarea>
+
+              <div class="sample-row">
+                <button class="chip" type="button" data-sample="reliable">
+                  Load reliable sample
+                </button>
+                <button class="chip" type="button" data-sample="suspicious">
+                  Load suspicious sample
+                </button>
+              </div>
+
+              <button class="button button-primary analyze-button" type="submit">
+                Analyze Credibility
+              </button>
+            </form>
+
+            <aside class="results-panel" id="resultsPanel" aria-live="polite">
+              <div class="results-topline">
+                <p>Credibility Estimate</p>
+                <strong id="verdictLabel">Waiting for analysis</strong>
+              </div>
+
+              <div class="score-ring" id="scoreRing">
+                <span id="scoreValue">--</span>
+              </div>
+
+              <p class="result-summary" id="resultSummary">
+                Add a headline and article text to generate a transparent credibility summary.
+              </p>
+
+              <div class="signal-groups">
+                <article>
+                  <h3>Positive Signals</h3>
+                  <ul id="positiveSignals">
+                    <li>Referenced evidence will appear here.</li>
+                  </ul>
+                </article>
+                <article>
+                  <h3>Risk Signals</h3>
+                  <ul id="riskSignals">
+                    <li>Potential manipulation indicators will appear here.</li>
+                  </ul>
+                </article>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="insights-grid reveal" id="insights">
+          <article class="insight-card">
+            <p class="eyebrow">What We Check</p>
+            <h3>Language intensity</h3>
+            <p>
+              Overheated phrasing, certainty without evidence, and urgency cues
+              often appear in low-credibility posts.
+            </p>
+          </article>
+          <article class="insight-card">
+            <p class="eyebrow">What We Check</p>
+            <h3>Source quality</h3>
+            <p>
+              Known publishers, institutional domains, and neutral naming
+              patterns usually increase confidence.
+            </p>
+          </article>
+          <article class="insight-card">
+            <p class="eyebrow">What We Check</p>
+            <h3>Evidence depth</h3>
+            <p>
+              We reward numbers, attribution, dates, and citations because they
+              make claims easier to verify.
+            </p>
+          </article>
+        </section>
+
+        <section class="workflow reveal" id="workflow">
+          <div class="section-heading">
+            <p class="eyebrow">Workflow</p>
+            <h2>Built for fast human review, not blind automation.</h2>
+          </div>
+          <div class="workflow-steps">
+            <article class="step-card">
+              <span>01</span>
+              <h3>Paste the claim</h3>
+              <p>Drop in a headline, source, and body text from any article or post.</p>
+            </article>
+            <article class="step-card">
+              <span>02</span>
+              <h3>Review the signals</h3>
+              <p>See credibility indicators, warning signs, and a balanced explanation.</p>
+            </article>
+            <article class="step-card">
+              <span>03</span>
+              <h3>Verify before sharing</h3>
+              <p>Use the result as a triage layer before editorial or academic review.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
